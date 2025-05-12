@@ -11,5 +11,5 @@ This uses fourier series method to speedup computation.
 I plan on doing it in mathematica as well.
 
 ## Kicked Rotor Modelling
-This is a project done in order to improve my understanding on kicked rotors.
-It involves various programs each giving out different
+This is a project done in order to improve my understanding on the kicked rotor model that is famously used in quantum chaos research.
+It involves various programs each giving out different types of outputs like phase-space diagrams, kick number vs average momentum graph etc.
