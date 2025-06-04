@@ -1,1 +1,57 @@
 
+
+In[1]:= px = {{0, 1}, {1, 0}};
+py = {{0, -I}, {I, 0}};
+pz = {{1, 0}, {0, -1}};
+
+In[4]:= chipc[thetak_, psik_] := {Cos[thetak/2]*Exp[-I*psik/2], 
+  Sin[thetak/2]*Exp[I*psik/2]}
+
+In[6]:= chip = ConjugateTranspose[chipc]
+chim = ConjugateTranspose[chimc]
+
+Out[6]= ConjugateTranspose[chipc]
+
+Out[7]= ConjugateTranspose[chimc]
+
+mult_xy = 
+ N[(chip[, 1] . px . chimc[1.5, 1])*(chim[1.5, 1] . py . chipc[2, 1])]
+
+Out[8]= ConjugateTranspose[chimc][1.5, 1.] . {0.403423 - 0.73846 I, 
+   0.259035 + 0.47416 I} ConjugateTranspose[chipc][2., 
+   1.] . {0.598194 + 0.326795 I, 0.642117 - 0.35079 I}
+
+In[2]:= mat = {{0, Sqrt[3], 0, 0}, {Sqrt[3], 0, 2, 0}, {0, 2, 0, 
+   Sqrt[3]}, {0, 0, Sqrt[3], 0}}
+
+Out[2]= {{0, Sqrt[3], 0, 0}, {Sqrt[3], 0, 2, 0}, {0, 2, 0, Sqrt[
+  3]}, {0, 0, Sqrt[3], 0}}
+
+In[3]:= mat // MatrixForm
+
+Out[3]//MatrixForm= \!\(
+TagBox[
+RowBox[{"(", "", GridBox[{
+{"0", 
+SqrtBox["3"], "0", "0"},
+{
+SqrtBox["3"], "0", "2", "0"},
+{"0", "2", "0", 
+SqrtBox["3"]},
+{"0", "0", 
+SqrtBox["3"], "0"}
+},
+GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+GridBoxSpacings->{"Columns" -> {
+Offset[0.27999999999999997`], {
+Offset[0.7]}, 
+Offset[0.27999999999999997`]}, "Rows" -> {
+Offset[0.2], {
+Offset[0.4]}, 
+Offset[0.2]}}], "", ")"}],
+Function[BoxForm`e$, 
+MatrixForm[BoxForm`e$]]]\)
+
+In[5]:= Eigenvalues[mat]
+
+Out[5]= {-3, 3, -1, 1}
