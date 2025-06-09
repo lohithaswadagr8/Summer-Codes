@@ -2,6 +2,9 @@
 This a set of codes that I performed during the summer of 2025.
 It has several different self initiated projects (mostly involving python as of now).
 
+## New! Response Function Calculation
+This project involves me trying to find the Spin-Spin response function of a Weyl Semimetal using Mathematica. Part of my project under Prof.Sayandip Ghosh.
+
 ## Population Modelling
 This project involves a set of population models. It uses prey-predator and competition equations to model population along with some variations like season-dependence of birth rates, discrete and continuos variants etc.
 
